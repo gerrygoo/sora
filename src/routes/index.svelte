@@ -30,7 +30,7 @@
   <div class="card" id={getId(src)}>
     <figure>
       <figcaption>
-        <a href="archive/#{getId(src)}">...</a>
+        <a href="/#{getId(src)}">...</a>
       </figcaption>
       <img {src} alt="a blue sky" />
     </figure>
