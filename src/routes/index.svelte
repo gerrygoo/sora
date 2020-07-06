@@ -1,16 +1,24 @@
-<style>
-  h1,
-  h1 {
-    font-size: 2.8em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 0 0 0.5em 0;
+<script context="module">
+  export async function preload(page, session) {
+    const res = await this.fetch("blue.json");
+    const media = await res.json();
+    return { media };
   }
+</script>
 
-  @media (min-width: 480px) {
-    h1 {
-      font-size: 4em;
-    }
+<script>
+  export let media;
+  $: photos = media.photos;
+
+  const getId = path => {
+    const segments = path.split("/");
+    return segments[segments.length - 1].split(".")[0];
+  };
+</script>
+
+<style>
+  img {
+    max-width: 100%;
   }
 </style>
 
@@ -18,4 +26,13 @@
   <title>fuchi</title>
 </svelte:head>
 
-<h1>Blue</h1>
+{#each photos as src}
+  <div class="card" id={getId(src)}>
+    <figure>
+      <figcaption>
+        <a href="archive/#{getId(src)}">...</a>
+      </figcaption>
+      <img {src} alt="a blue sky" />
+    </figure>
+  </div>
+{/each}

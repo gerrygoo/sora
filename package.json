@@ -12,7 +12,7 @@
     "test": "run-p --race dev cy:run",
     "lint": "prettier --check 'src/**/*.{html,js,svelte}'",
     "lint:fix": "prettier --write 'src/**/*.{html,js,svelte}'",
-    "deploy": "npm run export && node ./scripts/deploy.js"
+    "deploy": "npm run export && cp CNAME __sapper__/export/CNAME && node ./scripts/deploy.js"
   },
   "dependencies": {
     "compression": "^1.7.1",

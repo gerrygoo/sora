@@ -4,7 +4,7 @@
 
 <style>
   .spacer {
-    height: 1vh;
+    height: 5vh;
   }
 </style>
 

@@ -58,7 +58,7 @@
       <figure>
         <img {src} alt={caption} />
         <figcaption>
-          <a href="archive/#{getId(src)}">{caption || '.'}</a>
+          <a href="archive/#{getId(src)}">{caption || '...'}</a>
         </figcaption>
       </figure>
     </div>
